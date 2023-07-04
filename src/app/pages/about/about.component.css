@@ -1,0 +1,47 @@
+.content-title{
+    font-family: inter;
+    width: 900px;
+    height: 245;
+    font-size: 65px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+.title{
+    color: black;
+}
+
+.content-descr{
+    font-family: inter;
+    width: 900px;
+    height: 245;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    color: black;
+}
+
+.content-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-img{
+    width: 250px;
+}
+
+.content-card{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.card{
+    width: 200px;
+}
+.person-descr{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}

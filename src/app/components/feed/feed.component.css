@@ -1,0 +1,17 @@
+.content-about{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+  
+  }
+  .about{
+    font-weight: 900;
+    color: black;
+    font-size: bold;
+    font-family: inter;
+    width: 300px;
+    border-radius: 10px;
+    margin: 0 auto 0 auto;
+    background-color: #f2f2f2;
+  }

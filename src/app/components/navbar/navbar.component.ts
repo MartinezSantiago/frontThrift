@@ -15,7 +15,8 @@ userId:any;
 
   navigateToProfile(){
    this.userId=localStorage.getItem("userId");
-this.router.navigate(['/store/'+this.userId]);
+
+window.location.replace('store/'+this.userId);
   }
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

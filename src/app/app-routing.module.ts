@@ -7,7 +7,7 @@ import { EditProductComponent } from './pages/edit-product/edit-product.componen
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
-
+import { AboutComponent } from './pages/about/about.component';
 
 const logeado = localStorage.getItem('userId') ? true : false;
 
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'store/:id', component: logeado?  UserDetailComponent: LoginComponent },
   { path: 'cart', component: logeado?  CartComponent:LoginComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 
