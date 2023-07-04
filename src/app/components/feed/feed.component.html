@@ -9,7 +9,7 @@
     ></app-item-feed>
    
     <div class="content-about">
-      <Button class="about" routerLink="/about">Sobre Nosotros</Button>
+      <Button class="about" *ngIf="!isUserProfile" routerLink="/about">Sobre Nosotros</Button>
      </div>
    
   </div>
