@@ -1,0 +1,37 @@
+<div class="content-container" style="padding-bottom: 80px;">
+<form (ngSubmit)="onSubmit(form)" #form="ngForm" style="width:500px;margin-left: 30px;">
+  <div class="form-group row d-flex">
+    <label for="nombre" class="form-label mt-4">Nombre:</label>
+    <input type="text" class="form-control" id="name" name="name" ngModel required>
+  </div>
+  <div class="form-group row">
+    <label for="precio" class="form-label mt-4">Precio:</label>
+    <input type="number" id="price" name="price"  class="form-control"  ngModel required>
+  </div>
+  <div class="form-group row">
+    <label for="image" class="form-label mt-4">Imagen:</label>
+    <input type="file" id="image" name="image"  class="form-control"  (change)="onFileChange($event)" accept="image/*">
+  </div>
+  <div class="form-group row">
+    <label for="descr" class="form-label mt-4">Descripción:</label>
+    <textarea id="descr" name="descr"  class="form-control"  ngModel required></textarea>
+  </div>
+  <div class="form-group row">
+    <label for="category" class="form-label mt-4">Category:</label>
+    <input type="text" id="category" name="category"  class="form-control" ngModel >
+  </div>
+
+  <div class="form-group row">
+    <label for="state" class="form-label mt-4">State:</label>
+    <select id="state" name="state" class="form-control" ngModel>
+      <option value="1">Used</option>
+      <option value="2">Very Used</option>
+      <option value="3">New</option>
+    </select>
+  </div>
+
+ 
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Crear Producto</button>
+ 
+
+</form></div>

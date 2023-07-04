@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D9D9D9;
+  padding: 12px;
+}
+
+.navbar-title {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Inter;
+  top: 0;
+}
+
+.navbar-right {
+  background-color: #000;
+  padding: 10px;
+  z-index: 99999;
+}
+
+
+.user-profile {
+  cursor: pointer;
+}
+
+.profile-inner {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.profile-inner img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  display: none;
+}
+
+.menu.open {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  padding: 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #f8f8f8;
+}

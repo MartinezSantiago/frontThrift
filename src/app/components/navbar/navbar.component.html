@@ -1,0 +1,18 @@
+<div class="navbar" *ngIf="location == false">
+  <nav class="navbar-left" routerLink="">
+    <div class="navbar-title" >THRIFTarg</div>
+  </nav>
+
+  <nav class="navbar-right">
+    <div class="user-profile" (click)="toggleMenu()">
+      <div class="profile-inner">
+        <img src="https://api.multiavatar.com/denar.png" alt="Foto de Usuario" />
+      </div>
+      <div class="menu" [class.open]="isMenuOpen">
+        <a (click)="navigateToProfile()">Perfil</a>
+        <a routerLink="/configuracion">Configuración</a>
+        <a (click)="logout()">Cerrar sesión</a>
+      </div>
+    </div>
+  </nav>
+</div>

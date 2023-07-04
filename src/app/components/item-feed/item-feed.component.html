@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card mb-3">
+    <div class="card-header" *ngIf="isUserProfile">
+    
+      <b (click)="expandPost(product)">{{ product.name }}</b>
+      <div>
+        <img width="30" height="30" *ngIf="vendor" routerLink="/edit-product/{{product._id}}" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1" />
+        <img width="30" height="30" *ngIf="vendor" (click)="deleteProduct()" src="https://img.icons8.com/ios/50/trash--v1.png" alt="trash--v1" />
+      </div>
+    </div>
+    <div class="card-header" *ngIf="!isUserProfile" (click)="navigateToUserProfile(product.userId)">
+      <b>{{ product.username }}</b>
+    </div>
+    <div class="card-image" (click)="expandPost(product)">
+      <img src="{{ product.image }}" alt="image1122" class="card-img" />
+    </div>
+  </div>
+</div>
+
+
+<div id="postOverlay" class="post-overlay" [hidden]="!showPopup">
+  <span (click)="closePopup()" class="closePopUp"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><style>svg{fill:#f70808}</style><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></span>
+  <div id="expandedPost" class="expanded-post">
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="{{ expandedPost?.image }}" alt="Expanded Post Image" class="expanded-img img-fluid" />
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-details">
+          <div class="card-body">
+            <h3 class="expanded-title">{{ expandedPost?.name }}</h3>
+            <h3 class="expanded-description">Description: {{ expandedPost?.descr}}</h3>
+            <h3 class="expanded-price">Price: ${{ expandedPost?.price }}</h3>
+            <div class="button-container">
+              <button class="btn-share"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/60/share--v1.png" alt="share--v1"/></button>
+              <button class="btn-like" style="font-size: 50px ;"> &#10084;</button>
+              <div *ngIf="!isInCart(expandedPost?._id); else isCart">
+                <button class="btn-cart"><img width="30" height="30" (click)="addItemToCart(product, 1)" src="https://img.icons8.com/ios-glyphs/60/add-shopping-cart.png" alt="add-shopping-cart"/></button>
+              </div>
+              <ng-template #isCart>
+                <button class="btn-cart"><img width="30" height="30" src="https://img.icons8.com/?size=512&id=63312&format=png" alt="add-shopping-cart"/></button>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
