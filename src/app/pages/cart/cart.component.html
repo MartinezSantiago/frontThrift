@@ -1,7 +1,18 @@
-<ul>
-    <li *ngFor="let product of cart">
-      {{ product.name }} - ${{ product.price }}
-    </li>
-  </ul>
+<div style="margin-left:10px">
+<h2 style="color:gray;margin-top: 20px;">Cart</h2>
 
-  <h2>{{totalP()}}</h2>
+<ul class="product-list">
+  <li *ngFor="let product of cart" class="product-item">
+    <div class="product-image-container">
+    <img src="{{ product.image }}" alt="{{ product.name }}" class="product-image">
+  </div>
+    <div class="product-details">
+      <span class="product-name">{{ product.name }}</span>
+      <span class="product-price">$ {{ product.price }}</span>
+    </div>
+  </li>
+</ul>
+
+<h2 style="color:gray;">Total: {{ totalP() }}</h2>
+</div>
+
